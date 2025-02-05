@@ -1,0 +1,419 @@
+/* -------------------- IMPORTED FONTS -------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Habibi&family=Irish+Grover&display=swap');
+
+/*-------------------- CSS REST ---------------------------------------------------*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* remove padding and margin */
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* -------------------- ROOT VARIABLES --------------------------------------- */
+:root{
+    --color-green: #06A816;
+    --color-orange: #E75D02;
+    --color-black: #000000;
+    --color-white: #ffffff;
+}
+/* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+body {
+    font-family: Habibi, Georgia, serif;
+    font-size: 1.25em;
+    background-color: var(--color-white);
+    margin: 0 auto;
+
+}
+
+p {
+    margin: 0 10px;
+}
+
+
+/* --------------------Headings--------------------*/
+h1, h2, h3 {
+    font-family: "Irish Grover";
+}
+
+h2, h3 {
+    margin: 30px 5px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 3px var(--color-black);
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    text-align: center;
+    margin: 30px auto;
+}
+
+/* ------------------header and footer----------------------*/
+
+#h1-header, footer {
+    background-color: var(--color-green);
+    color: var(--color-white);
+    text-align: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+footer h2 {
+    padding-top: 40px;
+}
+
+address {
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+footer li {
+    list-style: none;
+
+}
+
+address {
+    font-style: normal;
+}
+
+address a{
+    text-decoration: none;
+}
+
+small {
+    display: block;
+    background-color: var(--color-white);
+    color: var(--color-green);
+} 
+
+footer {
+    margin-top: -30px;
+    margin-bottom: 0px
+}
+
+/* ------------------Navigation----------------------*/
+nav li{
+    list-style: none;
+    color: var(--color-white);
+}
+
+nav a {
+    text-decoration: none;  
+    background-color: var(--color-orange);
+    display: block;
+    text-align: center;
+    padding: 5px;
+    margin: 20px 15%;
+    border-radius: 3px;
+}
+
+#top {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;   
+    margin: 0;   
+    padding: 15px;
+    border: solid 2px var(--color-white);
+    z-index: 1;
+
+}
+
+/* ------------------images and captions----------------------*/
+
+img {
+    margin: 0 auto;
+    position: relative;
+    width: 270px;
+}
+
+figure {
+    text-align: center; 
+}
+
+
+figcaption {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    opacity: 75%;
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    width: 150px;
+    height: 50px;
+    margin: 0 auto;
+    position: relative;
+    bottom: 160px;
+    z-index: 1;
+    align-content: center;
+}
+
+/*-------------------- MEDIA QUERY (medium) --------------------------------*/
+@media (min-width: 834px) and (max-width: 1279px) {
+    
+
+    #h1-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    h1 {
+        justify-self: start;
+        padding: 7px;
+    }
+
+    #h1-header p{
+        align-self: center;
+    }
+
+    nav ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: -20px;
+        align-content: center;
+    }
+
+    #fruits-nav {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    #veg-nav  {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    #fruits-figures {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: -20px;
+    }
+
+    #veg-figures {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: -20px;
+
+    }
+
+    footer  {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-content: start;
+    }
+
+    small {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+   
+}
+/*-------------------- MEDIA QUERY (large) ------------------------------------*/
+
+@media (min-width: 1280px){
+    #header-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: var(--color-green);
+        align-items: end;
+        padding: 10px 5px 20px 5px;
+    }
+
+    #h1-header {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        justify-items: start;
+        display: grid;
+        grid-template-rows: auto;
+        margin: 0;
+        padding: 0;
+
+    }
+
+
+    h1 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        padding: 10px
+
+
+    }
+
+    #h1-header p{
+        grid-row-start: 2;
+        grid-row-end: 3;
+
+
+    }
+
+    nav {
+        grid-column-start: 2;
+        grid-column-end: 3;       
+        align-self: center; 
+        padding-top: 20px;
+    }
+
+    nav ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-content: center;
+    }
+
+    nav a{
+        margin: 0 5%;
+        border: solid 2px var(--color-white);
+    }
+
+    #fruits-nav {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    #veg-nav  {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    #fruits-figures {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: -20px;
+    }
+
+    #veg-figures {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: -20px;
+
+    }
+
+    footer  {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-content: start;
+    }
+
+    footer h2{
+        padding: 20px;
+    }
+
+    #contact {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-content: start;
+        padding: 10px 70px;
+        justify-items: start;
+    }
+
+    
+    #hours {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-content: start;
+        justify-items: start;
+        padding: 10px 0;
+
+    }
+
+    small {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+}
+
+/*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+
+@media (min-width: 1440px) {
+    #fruits-figures {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    #veg-figures {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
